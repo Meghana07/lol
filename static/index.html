@@ -1,0 +1,85 @@
+
+<html>
+	<head>
+	 <title>RPA Demo</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			.container input:checked ~ .checkmark {
+  				background-color: #2196F3;
+			}
+			.navbar-custom 
+				{		
+					background-color:#337ab7;
+				}
+				.header1 
+				{
+					text-align : center;
+					vertical-align:middle;
+					float: none;
+					font-size:170%; 
+				}
+				h3
+				{
+				 color :  #337ab7;
+				}
+				@media (min-width: 768px)
+				bootstrap.min.css:5
+				.col-sm-6 {
+					width: 50%;
+					}
+				.navbar-default .navbar-nav>li>a {
+						color: #fff;
+					}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default navbar-custom">
+			<div class="container-fluid">
+				<div class="header1">
+					<h3 style="color :white;">RPA Demo</h3>
+				</div>
+			</div>
+		</nav>
+		<div class="container">
+
+			<div class="row" style="margin-top: 50px;">
+				<div class="col-sm-4">
+				</div>
+				<div class="col-sm-4">
+					<div class="well">
+						<h3 align="center"> Enter Details Here </h3>
+						<form onSubmit="return false;" id="login_form" name="login_form">
+							<div class="form-group">
+								<input type="text" class="form-control null" id="Name" name="Name" placeholder="Enter Name">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control null" id="email" name="email" placeholder="Enter Email ID">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control null" id="salary" name="salary" placeholder="Enter Salary">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control null" id="AccountType" name="Account Type" placeholder="Enter Account Type(Current/Savings)">
+							</div>
+							<div class="form-group">
+								<label class="container"> Avail Premium services (if eligible)
+  									<input type="checkbox" checked="checked">
+  									<span class="checkmark"></span>
+								</label>
+							</div>
+							<!-- When you click this button, trigger the submit event on this form. -->
+							<button type="submit" id="btnsubmit" class="btn btn-primary">Submit</button>						
+						</form>					
+					</div>
+				</div>
+				<div class="col-sm-4">
+				</div>		
+			</div>	   
+		</div>
+	</body>
+</html>
