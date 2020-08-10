@@ -38,6 +38,19 @@
 	</head>
 
 	<body>
+		<script>
+			function func(){
+				const obj = {
+					name: document.getElementById("Name").value,
+					email: document.getElementById("email").value,
+					salary: document.getElementById("salary").value,
+					accountType: document.getElementById("AccountType").value,
+					checked: document.getElementById("checkbox").checked
+				}
+				const label1 = "<label>Name : </label>";
+				document.getElementById("hello").innerHTML = label1;
+			} 
+		</script>
 		<nav class="navbar navbar-default navbar-custom">
 			<div class="container-fluid">
 				<div class="header1">
@@ -53,7 +66,7 @@
 				<div class="col-sm-4">
 					<div class="well">
 						<h3 align="center"> Enter Details Here </h3>
-						<form onSubmit="return false;" id="login_form" name="login_form">
+						<form onSubmit="func()" id="login_form" name="login_form">
 							<div class="form-group">
 								<input type="text" class="form-control null" id="Name" name="Name" placeholder="Enter Name">
 							</div>
@@ -67,19 +80,20 @@
 								<input type="text" class="form-control null" id="AccountType" name="Account Type" placeholder="Enter Account Type(Current/Savings)">
 							</div>
 							<div class="form-group">
-								<label class="container"> Avail Premium services (if eligible)
-  									<input type="checkbox" checked="checked">
-  									<span class="checkmark"></span>
-								</label>
-							</div>
+                				<label class="checkbox-inline"><input type="checkbox" id="checkbox" required="required"><b>Avail Premium services (if eligible)</b></label>
+            				</div>
 							<!-- When you click this button, trigger the submit event on this form. -->
-							<button type="submit" id="btnsubmit" class="btn btn-primary">Submit</button>						
-						</form>					
+							<button type="submit" id="btnsubmit" class="btn btn-primary">Submit</button>							
+						</form>				
 					</div>
 				</div>
 				<div class="col-sm-4">
 				</div>		
 			</div>	   
 		</div>
+
+		<div id="hello">
+		</div>
+
 	</body>
 </html>
