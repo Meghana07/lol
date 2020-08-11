@@ -1,99 +1,115 @@
-
 <html>
-	<head>
-	 <title>RPA Demo</title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<style>
-			.container input:checked ~ .checkmark {
-  				background-color: #2196F3;
+<head>
+	<title>RPA Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		.container input:checked~.checkmark {
+			background-color: #2196F3;
+		}
+		.navbar-custom {
+			background-color: #337ab7;
+		}
+		.header1 {
+			text-align: center;
+			vertical-align: middle;
+			float: none;
+			font-size: 170%;
+		}
+		h3 {
+			color: #337ab7;
+		}
+		@media (min-width: 768px) bootstrap.min.css:5 .col-sm-6 {
+			width: 50%;
+		}
+		.navbar-default .navbar-nav>li>a {
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		function func() {
+			const obj = {
+				name: document.getElementById("Name").value,
+				email: document.getElementById("email").value,
+				salary: document.getElementById("salary").value,
+				accountType: document.getElementById("AccountType").value,
+				checked: document.getElementById("checkbox").checked
 			}
-			.navbar-custom 
-				{		
-					background-color:#337ab7;
-				}
-				.header1 
-				{
-					text-align : center;
-					vertical-align:middle;
-					float: none;
-					font-size:170%; 
-				}
-				h3
-				{
-				 color :  #337ab7;
-				}
-				@media (min-width: 768px)
-				bootstrap.min.css:5
-				.col-sm-6 {
-					width: 50%;
-					}
-				.navbar-default .navbar-nav>li>a {
-						color: #fff;
-					}
-		</style>
-	</head>
-
-	<body>
-		<script>
-			function func(){
-				const obj = {
-					name: document.getElementById("Name").value,
-					email: document.getElementById("email").value,
-					salary: document.getElementById("salary").value,
-					accountType: document.getElementById("AccountType").value,
-					checked: document.getElementById("checkbox").checked
-				}
-				const label1 = "<label>Name : </label>";
-				document.getElementById("hello").innerHTML = label1;
-			} 
-		</script>
-		<nav class="navbar navbar-default navbar-custom">
-			<div class="container-fluid">
-				<div class="header1">
-					<h3 style="color :white;">RPA Demo</h3>
+			var table = document.getElementById("myTable");
+			var row = table.insertRow(0);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			var cell5 = row.insertCell(4);
+			cell1.innerHTML = obj.name;
+			cell2.innerHTML = obj.email;
+			cell3.innerHTML = obj.salary;
+			cell4.innerHTML = obj.accountType;
+			cell5.innerHTML = obj.checked;
+		} 
+	</script>
+	<nav class="navbar navbar-default navbar-custom">
+		<div class="container-fluid">
+			<div class="header1">
+				<h3 style="color :white;">RPA Demo</h3>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-4">
+				<div class="well">
+					<h3 align="center"> Enter Details Here </h3>
+						<div class="form-group">
+							<input type="text" class="form-control null" id="Name" name="Name" placeholder="Enter Name">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control null" id="email" name="email"
+								placeholder="Enter Email ID">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control null" id="salary" name="salary"
+								placeholder="Enter Salary">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control null" id="AccountType" name="Account Type"
+								placeholder="Enter Account Type(Current/Savings)">
+						</div>
+						<div class="form-group">
+							<label class="checkbox-inline"><input type="checkbox" id="checkbox"
+									required="required"><b>Avail Premium services (if eligible)</b></label>
+						</div>
+						<!-- When you click this button, trigger the submit event on this form. -->
+						<button type="submit" id="btnsubmit" class="btn btn-primary"
+							onClick="func()">Submit</button>
 				</div>
 			</div>
-		</nav>
-		<div class="container">
-
-			<div class="row" style="margin-top: 50px;">
-				<div class="col-sm-4">
-				</div>
-				<div class="col-sm-4">
-					<div class="well">
-						<h3 align="center"> Enter Details Here </h3>
-						<form onSubmit="func()" id="login_form" name="login_form">
-							<div class="form-group">
-								<input type="text" class="form-control null" id="Name" name="Name" placeholder="Enter Name">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control null" id="email" name="email" placeholder="Enter Email ID">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control null" id="salary" name="salary" placeholder="Enter Salary">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control null" id="AccountType" name="Account Type" placeholder="Enter Account Type(Current/Savings)">
-							</div>
-							<div class="form-group">
-                				<label class="checkbox-inline"><input type="checkbox" id="checkbox"><b>Avail Premium services (if eligible)</b></label>
-            				</div>
-							<!-- When you click this button, trigger the submit event on this form. -->
-							<button type="submit" id="btnsubmit" class="btn btn-primary">Submit</button>							
-						</form>				
-					</div>
-				</div>
-				<div class="col-sm-4">
-				</div>		
-			</div>	   
+			<div class="col-sm-4">
+			</div>
 		</div>
-
-		<div id="hello">
+		<div class="row" style="margin-top: 20px;">
+			<table class="table" >
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Salary</th>
+						<th>Account type</th>
+						<th>Checked </th>
+					</tr>
+				</thead>
+				<tbody  id="myTable">
+				</tbody>
+			</table>
 		</div>
-
-	</body>
+	</div>
+</body>
 </html>
